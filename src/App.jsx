@@ -5,7 +5,6 @@ import { Loader } from 'components';
 import './App.css';
 
 const Header = lazy(() => import('../src/modules/Header/Header'));
-
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const NotFoundPage = lazy(() =>
   import('../src/pages/NotFoundPage/NotFoundPage')

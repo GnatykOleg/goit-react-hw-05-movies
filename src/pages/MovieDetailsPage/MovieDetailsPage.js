@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 
 import { useParams, useNavigate, Link, Route, Routes } from 'react-router-dom';
 
 import MovieDetailsList from '../../modules/MovieDetailsList/MovieDetailsList';
-import Cast from '../../modules/Cast/Cast';
-import Reviews from '../../modules/Reviews/Reviews';
+
 import { getMovieDetails } from 'shared/services/theMovieAPI';
 import { Loader } from 'components';
 import s from './MovieDetailsPage.module.css';
+
+const Cast = lazy(() => import('../../modules/Cast/Cast'));
+
+const Reviews = lazy(() => import('../../modules/Reviews/Reviews'));
 
 export default function MovieDetailsPage() {
   const [state, setState] = useState({
@@ -75,10 +78,12 @@ export default function MovieDetailsPage() {
               </Link>
             </div>
           </section>
-          <Routes>
-            <Route path="cast" element={<Cast />}></Route>
-            <Route path="reviews" element={<Reviews />}></Route>
-          </Routes>
+          <Suspense>
+            <Routes>
+              <Route path="cast" element={<Cast />}></Route>
+              <Route path="reviews" element={<Reviews />}></Route>
+            </Routes>
+          </Suspense>
         </>
       )}
     </>
