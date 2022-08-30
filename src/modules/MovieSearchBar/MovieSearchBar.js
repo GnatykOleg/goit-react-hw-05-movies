@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesBySearch } from 'shared/services/theMovieAPI';
-// import { MovieSearchForm, SearchMovieList } from 'modules';
+
 import MovieSearchForm from '../MovieSearchForm/MovieSearchForm';
 import SearchMovieList from '../SearchMovieList/SearchMovieList';
 import { Loader } from 'components';
@@ -18,6 +18,7 @@ export default function MovieSearchBar() {
       setLoading(true);
       try {
         const data = await getMoviesBySearch(query);
+
         setMovies(data);
       } catch (error) {
         setError(error.message);
@@ -42,11 +43,8 @@ export default function MovieSearchBar() {
       {error && <p>Movies not found.</p>}
       <MovieSearchForm formSubmitQuery={handleFormSubmit} />
       {loading && <Loader />}
-      {movies.length > 0 ? (
-        <SearchMovieList movies={movies} />
-      ) : (
-        <p>Images not found</p>
-      )}
+
+      {movies.length > 0 && <SearchMovieList movies={movies} />}
     </div>
   );
 }

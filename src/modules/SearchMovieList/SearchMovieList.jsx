@@ -10,6 +10,7 @@ export default function SearchMovieList({ movies }) {
       </li>
     );
   });
+
   return <ul className={s.list}>{elements}</ul>;
 }
 

@@ -35,16 +35,18 @@ export default function Cast() {
   const elements = cast.map(({ name, character, profile_path, id }) => {
     return (
       <ul className={s.list} key={id}>
-        <img
-          src={
-            profile_path
-              ? (profile_path = `https://image.tmdb.org/t/p/w500/${profile_path}`)
-              : (profile_path =
-                  'https://cdn.pixabay.com/photo/2016/12/14/23/08/page-not-found-1907792__340.jpg')
-          }
-          alt={name}
-          width={140}
-        />
+        <li>
+          <img
+            src={
+              profile_path
+                ? (profile_path = `https://image.tmdb.org/t/p/w500/${profile_path}`)
+                : (profile_path =
+                    'https://cdn.pixabay.com/photo/2016/12/14/23/08/page-not-found-1907792__340.jpg')
+            }
+            alt={name}
+            width={140}
+          />
+        </li>
         <li className={s.item}>
           <p className={s.text}>{name}</p>
           <p className={s.text}>Character: {character}</p>
