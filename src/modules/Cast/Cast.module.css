@@ -1,0 +1,35 @@
+.text {
+  font-size: 16px;
+  font-weight: 500;
+}
+.text:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 15px;
+  max-width: 1440px;
+  padding: 0 25px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gray;
+}
+
+.item {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.list {
+  outline: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,0 +1,30 @@
+.title {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.list {
+  margin-left: 20px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.title__child {
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 400;
+}
+.title__modif {
+  font-size: 30px;
+  margin-bottom: 10px;
+}

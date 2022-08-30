@@ -1,0 +1,23 @@
+.list:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.author {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.div {
+  max-width: 1440px;
+  padding: 0 25px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gray;
+}

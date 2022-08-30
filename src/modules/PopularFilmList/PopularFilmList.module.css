@@ -1,0 +1,15 @@
+.item {
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 250ms linear;
+  list-style: square;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.item:hover,
+.item:focus {
+  color: orange;
+}
