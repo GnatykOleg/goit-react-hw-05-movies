@@ -9,7 +9,6 @@ import { Loader } from 'components';
 import s from './MovieDetailsPage.module.css';
 
 const Cast = lazy(() => import('../../modules/Cast/Cast'));
-
 const Reviews = lazy(() => import('../../modules/Reviews/Reviews'));
 
 export default function MovieDetailsPage() {
