@@ -2,6 +2,7 @@ import { getMovieReviews } from 'shared/services/theMovieAPI';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'components';
+import Container from 'modules/Container/Container';
 import s from './Reviews.module.css';
 
 export default function Reviews() {
@@ -35,29 +36,27 @@ export default function Reviews() {
   const { loading, error, review } = state;
   const elements = review.map(({ author, content, id }) => {
     return (
-      <ul className={s.list} key={id}>
-        <li>
-          <p className={s.author}>Author: {author}</p>
-          <p className={s.text}>{content}</p>
-        </li>
-      </ul>
+      <li className={s.item} key={id}>
+        <p className={s.author}>Author: {author}</p>
+        <p className={s.text}>{content}</p>
+      </li>
     );
   });
   return (
-    <>
-      {loading && <Loader />}
-      {error && (
-        <div className={s.div}>
-          <p className={s.text}>Data not found</p>
-        </div>
-      )}
-      {review.length > 0 ? (
-        <div className={s.div}>{elements}</div>
-      ) : (
-        <div className={s.div}>
-          <p className={s.text}>We dont have any reviews for this movie</p>
-        </div>
-      )}
-    </>
+    <section className="section">
+      <Container>
+        {loading && <Loader />}
+        {error && (
+          <div className={s.div}>
+            <p className={s.text}>Data not found</p>
+          </div>
+        )}
+        {review.length > 0 ? (
+          <ul>{elements}</ul>
+        ) : (
+          <p className={s.text}>We dont have any reviews for this movie!</p>
+        )}
+      </Container>
+    </section>
   );
 }

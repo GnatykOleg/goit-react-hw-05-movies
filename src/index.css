@@ -1,3 +1,14 @@
+:root {
+  --main-color: #212121;
+  --box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.329);
+  --item-bg: rgba(128, 128, 128, 0.1);
+  --border: gray;
+  --accent-color: rgb(255, 166, 0);
+  --nav-link-bg: rgba(0, 0, 0, 0.5);
+  --white: #fff;
+  --transition: all 250ms linear;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.2;
 }
 
 code {
@@ -41,4 +53,22 @@ ol {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

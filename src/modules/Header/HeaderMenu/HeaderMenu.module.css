@@ -1,27 +1,31 @@
 .link {
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  font-size: 20px;
 
-  transition: all 250ms linear;
+  color: var(--white);
+  padding: 10px;
+  border-radius: 50px;
+  background: var(--nav-link-bg);
+
+  transition: var(--transition);
 }
 
 .link:hover,
 .link:focus {
-  color: orange;
+  color: var(--accent-color);
 }
 
 .linkActive {
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: orange;
-  transition: all 250ms linear;
-}
+  padding: 10px;
 
-.item:not(:last-child) {
-  margin-right: 25px;
+  font-size: 20px;
+  border-radius: 50px;
+  color: var(--accent-color);
+  background: var(--nav-link-bg);
+
+  transition: var(--transition);
 }
 
 .list {
   display: flex;
+  justify-content: space-between;
 }

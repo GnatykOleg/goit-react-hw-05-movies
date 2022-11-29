@@ -2,8 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { Loader } from 'components';
 
-import './App.css';
-
 const Header = lazy(() => import('../src/modules/Header/Header'));
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const NotFoundPage = lazy(() =>
@@ -18,6 +16,7 @@ export const App = () => {
   return (
     <>
       <Header />
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

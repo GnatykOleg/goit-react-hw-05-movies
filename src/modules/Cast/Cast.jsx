@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'shared/services/theMovieAPI';
 import Loader from 'components/Loader/Loader';
+import Container from 'modules/Container/Container';
 import s from './Cast.module.css';
 
 export default function Cast() {
@@ -34,44 +35,37 @@ export default function Cast() {
 
   const elements = cast.map(({ name, character, profile_path, id }) => {
     return (
-      <ul className={s.list} key={id}>
-        <li>
-          <img
-            src={
-              profile_path
-                ? (profile_path = `https://image.tmdb.org/t/p/w500/${profile_path}`)
-                : (profile_path =
-                    'https://cdn.pixabay.com/photo/2016/12/14/23/08/page-not-found-1907792__340.jpg')
-            }
-            alt={name}
-            width={140}
-          />
-        </li>
-        <li className={s.item}>
-          <p className={s.text}>{name}</p>
-          <p className={s.text}>Character: {character}</p>
-        </li>
-      </ul>
+      <li className={s.item} key={id}>
+        <img
+          className="img"
+          src={
+            profile_path
+              ? (profile_path = `https://image.tmdb.org/t/p/w500/${profile_path}`)
+              : (profile_path =
+                  'https://cdn.pixabay.com/photo/2017/06/08/17/32/not-found-2384304_960_720.jpg')
+          }
+          alt={name}
+          width={140}
+        />
+        <p className={s.text}>{name}</p>
+        <p className={s.text}>Character: {character}</p>
+      </li>
     );
   });
 
   return (
-    <>
-      {loading && <Loader />}
-      {error && (
-        <div className={s.div}>
-          <p className={s.text}>Data not found</p>
-        </div>
-      )}
-      {cast.length > 0 ? (
-        <div className={s.div}>{elements}</div>
-      ) : (
-        <div className={s.div}>
-          <p className={s.text}>
-            Sorry we dont have informations about this cast
+    <section className="section">
+      <Container>
+        {loading && <Loader />}
+        {error && <p style={{ fontSize: '20px' }}>Data not found</p>}
+        {cast.length > 0 ? (
+          <ul className={s.list}>{elements}</ul>
+        ) : (
+          <p style={{ fontSize: '20px' }}>
+            Sorry we dont have informations about this cast!
           </p>
-        </div>
-      )}
-    </>
+        )}
+      </Container>
+    </section>
   );
 }

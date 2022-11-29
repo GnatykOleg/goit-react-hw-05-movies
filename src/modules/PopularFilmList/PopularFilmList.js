@@ -35,10 +35,17 @@ export default function PopularFilmList() {
 
   const { loading, error, movies } = state;
 
-  const elements = movies.map(({ title, id }) => {
+  const elements = movies?.map(({ title, id, poster_path }) => {
     return (
       <li className={s.item} key={id}>
-        <Link to={`/movies/${id}`}>{title}</Link>
+        <Link to={`/movies/${id}`}>
+          <img
+            className={s.img}
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt="postermovie"
+          ></img>
+          <p className={s.text}>{title}</p>
+        </Link>
       </li>
     );
   });
@@ -52,7 +59,7 @@ export default function PopularFilmList() {
         </div>
       )}
       {movies.length > 0 ? (
-        <ul>{elements}</ul>
+        <ul className={s.list}>{elements}</ul>
       ) : (
         <div className={s.div}>
           <p className={s.text}>Sorry we dont found films...</p>

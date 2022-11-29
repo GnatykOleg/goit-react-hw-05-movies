@@ -8,7 +8,7 @@ const getLink = ({ isActive }) => {
 
 export default function HeaderMenu() {
   const elements = items.map(({ id, text, to }) => (
-    <li className={s.item} key={id}>
+    <li key={id}>
       <NavLink to={to} className={getLink}>
         {text}
       </NavLink>

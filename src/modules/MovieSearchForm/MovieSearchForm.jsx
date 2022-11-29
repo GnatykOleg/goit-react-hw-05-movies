@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import s from './MovieSearchForm.module.css';
 
 export default function MovieSearchForm({ formSubmitQuery }) {
@@ -15,7 +16,7 @@ export default function MovieSearchForm({ formSubmitQuery }) {
   };
   return (
     <form className={s.form} onSubmit={handleSubmit}>
-      <label>
+      <label className={s.label}>
         <input
           placeholder="Please type text..."
           className={s.input}
@@ -25,7 +26,7 @@ export default function MovieSearchForm({ formSubmitQuery }) {
         ></input>
       </label>
       <button className={s.btn} type="submit">
-        search
+        Search
       </button>
     </form>
   );

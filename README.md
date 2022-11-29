@@ -1,24 +1,31 @@
-<header><h1>Критерии приема</h1></header><p>Используй этот <a href="https://github.com/goitacademy/react-homework-template#readme" target="_blank" rel="noopener noreferrer">шаблон React-проекта</a> как стартовую точку своего приложения.</p><ul><li>Создан репозиторий <code>goit-react-hw-05-movies</code></li><li>При сдаче домашней работы есть ссылки: на исходные файлы и рабочие страницы
-каждого проекта на <code>GitHub Pages</code></li><li>В состоянии компонентов хранится минимально необходимый набор данных,
-остальное вычисляется</li><li>При запуске кода задания, в консоли нету ошибок и предупреждений</li><li>Для каждого компонента есть отдельная папка с файлом React-компонента и файлом
-стилей</li><li>Для компонентов описаны <code>propTypes</code></li><li>Все что компонент ожидает в виде пропов, передается ему при вызове</li><li>Имена компонентов понятные, описательные</li><li>JS-код чистый и понятный, используется <code>Prettier</code></li><li>Стилизация выполнена <code>CSS-модулями</code> или <code>Styled Components</code>.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="кинопоиск">Кинопоиск<a class="hash-link" href="https://textbook.edu.goit.global/lms-react-homework/v1/docs/hw-05/#%D0%BA%D0%B8%D0%BD%D0%BE%D0%BF%D0%BE%D0%B8%D1%81%D0%BA" title="Прямая ссылка на этот заголовок">​</a></h2><p>Создай базовую маршрутизацию для приложения поиска и хранения фильмов. Превью
-рабочего приложения
-<a href="https://drive.google.com/file/d/1vR0hi3n1236Q5Bg4-se-8JVKD9UKSfId/view?usp=sharing" target="_blank" rel="noopener noreferrer">смотри по ссылке</a>.</p><h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="api-themoviedborg">API themoviedb.org<a class="hash-link" href="https://textbook.edu.goit.global/lms-react-homework/v1/docs/hw-05/#api-themoviedborg" title="Прямая ссылка на этот заголовок">​</a></h3><p>Для бекенда используй <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">themoviedb.org API</a>.
-Необходимо зарегистриваться (можно ввести произвольные данные) и получить
-API-ключ. В этой работе будут использоваться следующие ендпоинты.</p><ul><li><a href="https://developers.themoviedb.org/3/trending/get-trending" target="_blank" rel="noopener noreferrer">/trending/get-trending</a>
-список самых популярных фильмов на сегодня для создания коллекции на главной
-странице.</li><li><a href="https://developers.themoviedb.org/3/search/search-movies" target="_blank" rel="noopener noreferrer">/search/search-movies</a>
-поиск кинофильма по ключевому слову на странице фильмов.</li><li><a href="https://developers.themoviedb.org/3/movies/get-movie-details" target="_blank" rel="noopener noreferrer">/movies/get-movie-details</a>
-запрос полной информации о фильме для страницы кинофильма.</li><li><a href="https://developers.themoviedb.org/3/movies/get-movie-credits" target="_blank" rel="noopener noreferrer">/movies/get-movie-credits</a>
-запрос информации о актёрском составе для страницы кинофильма.</li><li><a href="https://developers.themoviedb.org/3/movies/get-movie-reviews" target="_blank" rel="noopener noreferrer">/movies/get-movie-reviews</a>
-запрос обзоров для страницы кинофильма.</li></ul><p><a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank" rel="noopener noreferrer">Ссылка на документацию</a></p><h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="маршруты">Маршруты<a class="hash-link" href="https://textbook.edu.goit.global/lms-react-homework/v1/docs/hw-05/#%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D1%8B" title="Прямая ссылка на этот заголовок">​</a></h3><p>В приложении должны быть следующие маршруты. Если пользователь зашел по
-несуществующему маршруту, его необходимо перенаправлять на домашнюю страницу.</p><ul><li><code>'/'</code> - компонент <code>Home</code>, домашняя страница со списком популярных
-кинофильмов.</li><li><code>'/movies'</code> - компонент <code>Movies</code>, страница поиска фильмов по ключевому
-слову.</li><li><code>'/movies/:movieId'</code> - компонент <code>MovieDetails</code>, страница с детальной
-информацией о кинофильме.</li><li><code>/movies/:movieId/cast</code> - компонент <code>Cast</code>, информация о актерском составе.
-Рендерится на странице <code>MovieDetails</code>.</li><li><code>/movies/:movieId/reviews</code> - компонент <code>Reviews</code>, информация об обзорах.
-Рендерится на странице <code>MovieDetails</code>.</li></ul><h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="code-splitting-разделение-кода">Code Splitting (разделение кода)<a class="hash-link" href="https://textbook.edu.goit.global/lms-react-homework/v1/docs/hw-05/#code-splitting-%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%B4%D0%B0" title="Прямая ссылка на этот заголовок">​</a></h3><p>Добавь асинхронную загрузку JS-кода для маршрутов приложения используя
-<code>React.lazy()</code> и <code>&lt;Suspense&gt;</code>.</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Навигация по странице документации"></nav></div></div></div></div></main></div></div></div>
+# React Movies Finder
 
+#### Adaptive design to the mobile, tablet, and desktop.
 
-</body></html>
+#### Themoviedb.org public API is used for the backend.
+
+#### The following endpoints were used in this work:
+
+` /trending/get-trending a list of the most popular films for today to create a collection on the main page.`
+
+` /search/search-movies search for a movie by keyword on the movies page.`
+
+` /movies/get-movie-details Request full movie details for the movie page.`
+
+` /movies/get-movie-credits request information about the cast for the movie page.`
+
+` /movies/get-movie-reviews Request reviews for the movie page.`
+
+#### The application has the following routes. If the user has accessed a non-existent route, he is redirected to the home page.
+
+`'/' is the Home component, the home page with a list of popular movies.`
+
+`'/movies' is the Movies component, a search page for movies by keyword.`
+
+`'/movies/:movieId'' is the MovieDetails component, the movie detail page.`
+
+`/movies/:movieId/cast - Cast component, information about the cast. Rendered on the MovieDetails page.`
+
+`/movies/:movieId/reviews - Reviews component, information about reviews. Rendered on the MovieDetails page.`
+
+#### Added asynchronous loading of JS code for app routes using React.lazy() and <Suspense>

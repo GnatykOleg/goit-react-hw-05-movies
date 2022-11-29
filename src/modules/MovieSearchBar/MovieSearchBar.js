@@ -39,12 +39,14 @@ export default function MovieSearchBar() {
     setSearchParams({ query: searchValue });
   };
   return (
-    <div>
+    <>
       {error && <p>Movies not found.</p>}
+
       <MovieSearchForm formSubmitQuery={handleFormSubmit} />
+
       {loading && <Loader />}
 
       {movies.length > 0 && <SearchMovieList movies={movies} />}
-    </div>
+    </>
   );
 }

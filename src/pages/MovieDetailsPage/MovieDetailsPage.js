@@ -6,6 +6,8 @@ import MovieDetailsList from '../../modules/MovieDetailsList/MovieDetailsList';
 
 import { getMovieDetails } from 'shared/services/theMovieAPI';
 import { Loader } from 'components';
+
+import Container from 'modules/Container/Container';
 import s from './MovieDetailsPage.module.css';
 
 const Cast = lazy(() => import('../../modules/Cast/Cast'));
@@ -51,31 +53,27 @@ export default function MovieDetailsPage() {
   return (
     <>
       {loading && <Loader />}
-      {error && (
-        <div className="container">
-          <h2 className={s.error}>Data not found</h2>
-        </div>
-      )}
+      {error && <h2 className={s.error}>Data not found</h2>}
       {isMovies && (
         <>
           <section className="section">
-            <div className="container">
-              <button className="button" type="button" onClick={goBackButton}>
+            <Container>
+              <button className={s.button} type="button" onClick={goBackButton}>
                 ← Go back
               </button>
               <MovieDetailsList {...movies} />
-            </div>
+            </Container>
           </section>
           <section className="section">
-            <div className="container">
-              <p className={s.text}>Additional information</p>
+            <Container>
+              <p className={s.text}>Additional information:</p>
               <Link className={s.link} to={`cast`}>
-                ∎ Cast
+                » Cast
               </Link>
               <Link className={s.link} to={`reviews`}>
-                ∎ Reviews
+                » Reviews
               </Link>
-            </div>
+            </Container>
           </section>
           <Suspense>
             <Routes>
